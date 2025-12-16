@@ -15,6 +15,9 @@ This enables models to **detect limitations** and **justify them** with verifiab
 
 ## Dataset Overview
 
+> **Note:** The dataset is currently being reorganized/arranged.  
+> The final folder/file arrangement will be completed within the next couple of days.
+
 SciLiPS currently includes **100 research papers** from two domains:
 
 - **Natural Language Processing (NLP)**  
