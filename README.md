@@ -1,6 +1,6 @@
 # SciLiPS: Scientific Paper Limitations Dataset
 
-SciLiPS (Scientific Papers Limitations Dataset) is a supervision resource for **evidence-grounded limitation extraction** from scientific papers.
+SciLiPS (Scientific Papers Limitations Dataset) is a supervised resource for **evidence-grounded limitation extraction** from scientific papers.
 
 For each paper, SciLiPS links:
 
@@ -18,43 +18,45 @@ This enables models to **detect limitations** and **justify them** with verifiab
 > **Note:** The dataset is currently being reorganized/arranged.  
 > The final folder/file arrangement will be completed within the next couple of days.
 
-SciLiPS currently includes **100 research papers** from two domains:
+SciLiPS currently includes **150 research papers** from two domains:
 
 - **Natural Language Processing (NLP)**  
-  - 70 papers from ACL 2024 and 2025 proceedings
+  - **100 papers from ACL 2024 and 2025 proceedings**
 - **Computer Vision**  
-  - 30 papers from IEEE/CVF 2024 CVPR
+  - **50 papers from IEEE/CVF venues (e.g., CVPR 2024)**
 
 For every paper, SciLiPS provides:
 
-- The **full paper** (original PDF)
-- The same paper **parsed into sections and sentences**
-- A set of **explicit limitation sentences** extracted from the Limitations (or equivalent) subsection
-- A **category** for each limitation, chosen from:
-  - `data_quality`
-  - `method/dataset_mismatch`
-  - `limited_scope`
-  - `evaluation/metrics`
-  - `compute/scale`
-  - `other`
-- One or more **related evidence sentences** for each limitation,  
-  sampled **only from non-Limitations sections**, each with:
-  - Sentence text  
-  - Section name / provenance  
+- The **full paper PDFs** in `papers_pdf/`
+- The same papers **parsed into structured JSON** in `papers_json/`
+- A CSV file containing **author-written limitation sentences** and their **evidence sentences** from outside the Limitations section:  
+  - **`scilips_limitations_evidence.csv`**
+
+---
+
+## Limitation Categories
+
+Each limitation is assigned one normalized category from:
+
+- `data_quality`
+- `method/dataset_mismatch`
+- `limited_scope`
+- `evaluation/metrics`
+- `compute/scale`
+- `other`
 
 ---
 
 ## Repository Structure
 
-The repository is organized as follows:
-
 ```text
 .
-├── papers/              # 100 original PDFs (70 ACL, 30 CVPR)
+├── papers_pdf/                       # 150 original PDFs (100 ACL, 50 CVF)
 │   ├── <paper_id_1>.pdf
 │   ├── <paper_id_2>.pdf
 │   └── ...
-└── json/                # 100 JSON files, one per paper
-    ├── <paper_id_1>.json
-    ├── <paper_id_2>.json
-    └── ...
+├── papers_json/                      # 150 parsed JSON files (one per paper)
+│   ├── <paper_id_1>.json
+│   ├── <paper_id_2>.json
+│   └── ...
+└── scilips_limitations_evidence.csv  # author limitations + evidence sentences
