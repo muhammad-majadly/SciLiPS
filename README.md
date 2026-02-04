@@ -1,5 +1,8 @@
 # SciLiPS: Scientific Paper Limitations Dataset
 
+> **Note:** The dataset is currently being reorganized/arranged and will be **ready within the next couple of days**.  
+> The final folder/file arrangement will be completed within the next couple of days.
+
 SciLiPS (Scientific Papers Limitations Dataset) is a supervised resource for **evidence-grounded limitation extraction** from scientific papers.
 
 For each paper, SciLiPS links:
